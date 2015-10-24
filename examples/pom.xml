@@ -98,6 +98,34 @@
 			<plugin>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -110,18 +138,18 @@
 			</plugin>
 
 			<plugin>
-			      <artifactId>maven-assembly-plugin</artifactId>
-			      <configuration>
-				<archive>
-				  <manifest>
-				    <mainClass>MAIN_CLASS</mainClass>
-				  </manifest>
-				</archive>
-				<descriptorRefs>
-				  <descriptorRef>jar-with-dependencies</descriptorRef>
-				</descriptorRefs>
-			      </configuration>
-			   </plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>MAIN_CLASS</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
