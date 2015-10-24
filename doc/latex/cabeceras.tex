@@ -1,0 +1,263 @@
+%
+% cabeceras.tex
+%
+% Copyright 2003, Diego Berrueta Muñoz
+%
+% Cabeceras comunes
+%
+
+\usepackage[T1]{fontenc}
+
+%Glosario
+
+\usepackage[toc,style=treenoname,order=word,counter=section]{glossaries}
+
+\usepackage{xspace}
+
+
+\usepackage{tikz,times}
+
+% cambia algunas fuentes (utilidad dudosa)
+\usepackage[scaled=0.92]{helvet}
+\usepackage{pifont}
+\usepackage{courier}
+
+% cambia algunas fuentes en modo matemático a Palatino
+\usepackage{mathpazo}
+
+% españolización
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+%\extrasspanish
+
+% gráficos y colores
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{color}
+%\usepackage[all]{xy}
+%\usepackage{pstricks}
+\usepackage{pst-node}
+%\usepackage[dvips,usenames]{pstcol}
+%\usepackage{pdftricks}
+%\usepackage{pst-uml}  % para hacer diagramas UML
+%\usepackage{rail}     % para hacer diagramas de gramáticas
+
+% mejoras visuales
+\usepackage{enumerate}
+\usepackage{fancyhdr}  % para configurar los encabezados
+\usepackage{fancybox}  % para hacer cajitas
+\usepackage[normal,oneline,sf,bf]{caption2}
+\usepackage{titlesec}  % para configurar los títulos de sección
+\usepackage{paralist}
+
+
+\usepackage{epigraph}
+
+% citas, referencias e índices
+\usepackage{cite}
+%\usepackage{citesort}   % da errores al compilar
+\usepackage{makeidx}
+
+% incrustaciones de código fuente
+%\usepackage[norules,nolineno]{lgrind}
+\usepackage{verbatim}
+\usepackage{listings}
+%\usepackage{noweb,a4wide}
+
+
+%\usepackage{textcomp}
+\usepackage[right]{eurosym}
+
+% columnas
+\usepackage{multicol}
+
+% tablas
+\usepackage{longtable}
+%\usepackage{ltxtable}
+
+% impresión elegante de URLs
+\usepackage{url}
+
+\makeatletter
+\def\url@pfcstyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{pfc}
+
+
+% márgenes
+\usepackage[a4paper, left=30mm, right=20mm, top=25mm, bottom=25mm]{geometry}
+%\usepackage[a4paper, left=20mm, right=20mm, top=25mm, bottom=25mm]{geometry}
+
+% 
+% \usepackage[a4,center,cam]{crop}
+\usepackage{blindtext}
+
+% salida en PDF navegable
+%\usepackage{hyperref}
+\usepackage[plainpages=false,colorlinks, linkcolor=black]{hyperref}
+
+% quitar en versión final
+%\usepackage{showkeys}   % depuración de etiquetas y referencias
+%\usepackage{showidx}    % depuración de índice
+
+% configuración del paquete "listings"
+
+\lstset{%
+    language=Java,
+	basicstyle=\footnotesize\sffamily,
+	keywordstyle=\bfseries, %\color{darkred}
+ 	stringstyle=\itshape, %\color{violet}
+ 	commentstyle=\itshape, %\color{blue}
+ 	showspaces=false,
+ 	showtabs=false,
+ 	showstringspaces=false,
+ 	frame=trBL,
+        frameround=tttt,
+        %backgroundcolor=\color{lightyellow},
+	inputencoding=utf8,
+ 	extendedchars=true,
+ 	numbers=none,
+        aboveskip=0.5cm,
+        belowskip=0.5cm,
+        xleftmargin=1cm,
+        xrightmargin=1cm,
+	breaklines=true
+}
+\definecolor{darkred}{rgb}{0.5, 0, 0}
+\definecolor{violet}{rgb}{1, 0, 1}
+\definecolor{lightyellow}{rgb}{1,1,0.8}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cabeceras y pies de página (con el paquete "fancyhdr")
+\headheight 15pt
+%\addtolength{\headwidth}{\marginparsep}
+%\addtolength{\headwidth}{\marginparwidth}
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhead[LE,RO]{\textbf{\thepage}}
+%\fancyhead[RE]{\textit{\leftmark}}
+%\fancyhead[LO]{\rightmark}
+%\fancyfoot[LCR]{}
+\fancyhead{} % Todos los campos en blanco en la cabecera
+\fancyfoot{} % Lo mismo al pie
+\fancyhead[RO, LE]{\thepage}
+\fancyhead[LO, RE]{\slshape\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% títulos de secciones (con el paquete "titlesec")
+\titleformat{\chapter}[display]
+	{\fontfamily{pag}\selectfont\Huge}
+	{\LARGE\chaptertitlename\ \thechapter}{20pt}{\bfseries}
+\titleformat{\section}
+	{\fontfamily{phv}\selectfont\LARGE}
+	{\thesection}{1em}{\bfseries}[\titlerule]
+\titleformat{\subsection}
+	{\fontfamily{phv}\selectfont\Large}
+	{\thesubsection}{1em}{\bfseries}
+\titleformat{\subsubsection}
+	{\fontfamily{phv}\selectfont\large}
+	{\thesubsubsection}{1em}{\bfseries}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% espaciado entre párrafos
+\addtolength{\parskip}{+0.2cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% salida en PDF navegable (con el paquete "hyperref")
+\hypersetup{bookmarks,
+	bookmarksnumbered,
+%	colorlinks, % quitar en las versiones impresas
+	hyperindex,
+	%linkcolor=red,
+	%anchorcolor=black,
+	%citecolor=green,
+	citecolor=violet,
+	%filecolor=magenta,
+	%menucolor=red,
+	%pagecolor=red,
+	%urlcolor=cyan,
+	pdftitle={Ejercicios Básicos en Java-Jose María Alvarez Rodríguez},
+	pdfauthor={Jose María Alvarez Rodríguez}
+	pdffitwindow,
+	plainpages=false,
+	pageanchor=false,
+	pdfstartview={}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% profundidad de secciones y numeración
+%\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% división silábica
+\hyphenation{pu-bli-ca-ción}   
+
+%%Tablas
+\addto\captionsspanish{
+        \def\listtablename{\'Indice de tablas}%
+        \def\tablename{Tabla}} 
+
+%%%Math
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{rotating}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{examples}[theorem]{Ejemplos}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{note}[theorem]{Nota}
+
+
+
+\newsavebox\FrameBox
+\newenvironment{Frame}{%
+  \par\setbox\FrameBox\hbox\bgroup\minipage{0.9\textwidth}\parskip\baselineskip\ignorespaces
+}{%
+  \endminipage\egroup\fbox{\box\FrameBox}\par
+}
+
+\newcommand{\si}{$\oplus$\xspace}
+\newcommand{\no}{$\ominus$\xspace}
+\newcommand{\na}{$\odot$\xspace}
+
+
+%Extraer
+\newcommand{\linkeddata}{\textit{Linked Data}\xspace}
+\newcommand{\opendata}{\textit{Open Data}\xspace}
+\newcommand{\lod}{\textit{Linking Open Data}\xspace}
+\newcommand{\ogd}{\textit{Open Government Data}\xspace}
+\newcommand{\datasets}{\textit{datasets}\xspace}
+\newcommand{\dataset}{\textit{dataset}\xspace}
+\newcommand{\provenance}{\textit{provenance}\xspace}
+\newcommand{\trust}{\textit{trust}\xspace}
+\newcommand{\egov}{\textit{e-government}\xspace}
+\newcommand{\pusi}{\textit{Public Sector Information}\xspace}
+\newcommand{\gd}{\textit{Government Data}\xspace}
+\newcommand{\wod}{Web de Datos\xspace}
+\newcommand{\wode}{\textit{Web of Data}\xspace}
+\newcommand{\eproc}{\textit{\gls{e-Procurement}}\xspace}
+\newcommand{\gld}{\textit{Government Linked Data}\xspace}

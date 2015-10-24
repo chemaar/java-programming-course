@@ -1,0 +1,109 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage{titlesec}  % para configurar los títulos de sección
+\usepackage{fancyhdr}  % para configurar los encabezados
+
+
+% títulos de secciones (con el paquete "titlesec")
+\titleformat{\chapter}[display]
+{\fontfamily{pag}\selectfont\Huge}
+{\LARGE\chaptertitlename\ \thechapter}{20pt}{\bfseries}
+\titleformat{\section}
+{\fontfamily{phv}\selectfont\LARGE}
+{\thesection}{1em}{\bfseries}[\titlerule]
+\titleformat{\subsection}
+{\fontfamily{phv}\selectfont\Large}
+{\thesubsection}{1em}{\bfseries}
+\titleformat{\subsubsection}
+{\fontfamily{phv}\selectfont\large}
+{\thesubsubsection}{1em}{\bfseries}
+
+
+\headheight 15pt
+%\addtolength{\headwidth}{\marginparsep}
+%\addtolength{\headwidth}{\marginparwidth}
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhead[LE,RO]{\textbf{\thepage}}
+%\fancyhead[RE]{\textit{\leftmark}}
+%\fancyhead[LO]{\rightmark}
+%\fancyfoot[LCR]{}
+\fancyhead{} % Todos los campos en blanco en la cabecera
+\fancyfoot{} % Lo mismo al pie
+\fancyhead[RO, LE]{\thepage}
+\fancyhead[LO, RE]{\slshape\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\lstset{%
+	language=Java,
+	basicstyle=\footnotesize\sffamily,
+	keywordstyle=\bfseries, %\color{darkred}
+	stringstyle=\itshape, %\color{violet}
+	commentstyle=\itshape, %\color{blue}
+	showspaces=false,
+	showtabs=false,
+	showstringspaces=false,
+	%frame=trBL,
+	%frameround=tttt,
+	%backgroundcolor=\color{lightyellow},
+	inputencoding=utf8,
+	extendedchars=true,
+	numbers=none,
+	aboveskip=0.5cm,
+	belowskip=0.5cm,
+	xleftmargin=0.2cm,
+	xrightmargin=0.2cm,
+	breaklines=true
+}
+\lstset{literate=%
+	{ñ}{{\"n}}1
+	{á}{{\'a}}1
+	{é}{{\'e}}1
+	{í}{{\'i}}1
+	{ó}{{\'o}}1
+	{ú}{{\'u}}1
+}
+
+\usepackage{framed}
+
+\usepackage{caption}
+\captionsetup[lstlisting]{font={small,tt}}
+
+\definecolor{darkred}{rgb}{0.5, 0, 0}
+\definecolor{violet}{rgb}{1, 0, 1}
+\definecolor{lightyellow}{rgb}{1,1,0.8}
+
+\usepackage{hyperref}
+\usepackage[
+type={CC},
+modifier={by-nc-sa},
+version={3.0},
+]{doclicense}
+
+
+\begin{document}
+
+\author{\texttt{Dr. Jose María Alvarez Rodríguez}}
+\title{\textbf{Boletín de Ejercicios Básicos en Java} \\ Programación \\ Universidad Carlos III de Madrid\\ {\footnotesize Curso 2015-2016}}
+\date{Octubre 2015}
+
+\frontmatter
+\maketitle
+\tableofcontents
+\lstlistoflistings
+
+\mainmatter
+\include{./TeX_files/chapter01}
+\include{./TeX_files/chapter02}
+\include{./TeX_files/chapter03}
+
+\backmatter
+% bibliography, glossary and index would go here.
+
+\end{document}

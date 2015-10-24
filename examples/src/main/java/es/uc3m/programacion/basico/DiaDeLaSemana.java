@@ -1,12 +1,12 @@
 package es.uc3m.programacion.basico;
 /**
  * Escribir un programa que dado un mes (m), día (d) y año (y) muestre por pantalla
- * el nº de día de la samena. 
+ * el número de día de la semana. 
  * 
  * Los meses comienzan en 1 hasta 12.
  * Los días comienzan en 0 (domingo).
  * 
- * Se deberí aplicar la siguiente fórmula:
+ * Se debería aplicar la siguiente fórmula:
  *
  *        y0 = y - (14 - m) / 12
  *        x = y0 + y0/4 - y0/100 + y0/400

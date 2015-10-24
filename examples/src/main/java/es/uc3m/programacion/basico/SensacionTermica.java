@@ -16,6 +16,6 @@ public class SensacionTermica {
 	        double ts = 13.12 + 0.6215*t -(11.37*Math.pow(v, 0.16))+(0.3965*t* Math.pow(v, 0.16));
 	        System.out.println("Temperatura = " + t);
 	        System.out.println("Velocidad del tiempo  = " + v);
-	        System.out.println("Sensaci�n t�rmica  = " + ts);
+	        System.out.println("Sensación térmica  = " + ts);
 	    }
 }
